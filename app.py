@@ -9,6 +9,11 @@ from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.models import Model
 
+import os
+# Set the environment variable
+os.environ["TF_USE_LEGACY_KERAS"] = "1"
+
+
 # Load the pre-trained model and tokenizer
 @st.cache(allow_output_mutation=True)
 def load_model_and_tokenizer():
