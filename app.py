@@ -1,5 +1,5 @@
 import streamlit as st
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from keras.preprocessing.sequence import pad_sequences
 import pickle
 import numpy as np
@@ -8,10 +8,6 @@ from keras.applications.vgg16 import VGG16, preprocess_input
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.models import Model
-
-import os
-# Set the environment variable
-os.environ["TF_USE_LEGACY_KERAS"] = "1"
 
 
 # Load the pre-trained model and tokenizer
