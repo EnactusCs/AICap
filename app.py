@@ -4,10 +4,10 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import pickle
 import numpy as np
 
-from keras.applications.vgg16 import VGG16, preprocess_input
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
-from keras.models import Model
+from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
+from tensorflow.keras.preprocessing.image import load_img
+from tensorflow.keras.preprocessing.image import img_to_array
+from tensorflow.keras.models import Model
 
 
 # Load the pre-trained model and tokenizer
@@ -43,9 +43,6 @@ def get_image_feature(img, model_vgg16):
     feature = model_vgg16.predict(image, verbose=0)
     return feature
 
-
-# generating captions for the image
-import numpy as np
 
 
 def predict_captions(image, model, tokenizer, max_len, model_vgg16):
