@@ -9,9 +9,9 @@ from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.models import Model
 
-import os
-# Set the environment variable
-os.environ["TF_USE_LEGACY_KERAS"] = "1"
+# import os
+# # Set the environment variable
+# os.environ["TF_USE_LEGACY_KERAS"] = "1"
 
 
 # Load the pre-trained model and tokenizer
@@ -48,9 +48,6 @@ def get_image_feature(img, model_vgg16):
     return feature
 
 
-# generating captions for the image
-import numpy as np
-
 
 def predict_captions(image, model, tokenizer, max_len, model_vgg16):
     image = get_image_feature(image, model_vgg16)
@@ -60,9 +57,10 @@ def predict_captions(image, model, tokenizer, max_len, model_vgg16):
         seq = tokenizer.texts_to_sequences([in_text])[0]
         seq = pad_sequences([seq], maxlen=max_len, padding="post")
         y_hat = model.predict([image, seq], verbose=0).flatten()
-        top_indices = np.argsort(y_hat)[-3:][::-1]
-        top_probabilities = y_hat[top_indices]
-        chosen_index = np.random.choice(top_indices, p=top_probabilities / np.sum(top_probabilities))
+        # top_indices = np.argsort(y_hat)[-3:][::-1]
+        # top_probabilities = y_hat[top_indices]
+        # chosen_index = np.random.choice(top_indices, p=top_probabilities / np.sum(top_probabilities))
+        chosen_index = np.argmax(y_hat)
         word = idx_to_integer(chosen_index, tokenizer)
         if word is None:
             break
