@@ -9,21 +9,6 @@ from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.models import Model
 
-<<<<<<< HEAD
-# import os
-# # Set the environment variable
-# os.environ["TF_USE_LEGACY_KERAS"] = "1"
-=======
-# import subprocess
-
-# # Define the Keras version you want to install
-# keras_version = "2.1.0"
-
-# # Use subprocess to run the pip install command
-# subprocess.run(["pip", "install", f"keras=={keras_version}"])
->>>>>>> f46b25ba7e5895a8b82051e61f219dc128528582
-
-
 # Load the pre-trained model and tokenizer
 @st.cache(allow_output_mutation=True)
 def load_model_and_tokenizer():
