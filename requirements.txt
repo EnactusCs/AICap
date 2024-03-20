@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 absl-py==2.1.0
 altair==5.1.1
 altgraph==0.17.4
@@ -146,3 +147,9 @@ wrapt==1.14.1
 zipp==3.17.0
 zope.event==5.0
 zope.interface==6.1
+=======
+streamlit
+tensorflow
+Pillow
+numpy
+>>>>>>> f46b25ba7e5895a8b82051e61f219dc128528582
